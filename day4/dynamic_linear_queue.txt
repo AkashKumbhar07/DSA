@@ -1,0 +1,31 @@
+
+Dynamic Linear Queue : 
+--- we use linked list (linear Singly Linked list) to implement the linear queue.
+--- Here no queue full condition (RAM memory size is the limit).
+--- We maintain, two pointers with linear SLL- head and tail, head pointer 
+    is treated as front and tail pointer is treated as rear.
+--- If we use circular SLL, then we maintain only tail (rear) pointer, tail->next
+    will give head (front).
+
+To maintain dynamic queue using SLL, we need to three things -
+a) A node of SLL - to store the elements of a queue and a pointer to the next
+                   node
+b) front - a pointer variable which stores the address of front node (element) ---
+         just like head in SLL
+c) rear - a pointer variable which stores the address of rear (tail) node (element) 
+         
+
+For e.g. To maintain integer dynamic stack,
+
+class Dqueuenode
+{
+   int data;
+   Dqueuenodenext;
+}
+
+class Queue{
+	
+Dqueuenode rear, front;
+//operations
+
+}

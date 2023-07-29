@@ -1,0 +1,106 @@
+Queue Data Structure :
+
+--- It is a linear data structure in which elements are in order.
+--- Every element has one-to-one relationship among themselves.
+--- Every queue has two ends open --- the front end and rear end (last end).
+--- When a new element is inserted in a queue then it is added at rear end
+    and when an element is removed from the queue then it is deleted from
+    front end.  In other words, insertions in queue are made at rear end and
+    deletions are made from front end.
+--- At a time only one element is inserted or deleted.
+--- The element which is inserted first will be removed first and the element
+    which is inserted last will be removed last.  Thus queue works in FIFO
+    manner (First In First Out) or LILO (Last In Last Out).
+--- Queue is dynamic in nature means it can grow or shrink at the time of
+    execution.
+--- Queue is visualized horizontally.
+
+As queue is a data structure, we should define a triplet - D, F and A.
+
+D : data object (domain) --- the list of elements we are maintaining 
+    For e.g. for integer queue --- integer values are domain
+             for printing job queue --- files data are the domain
+             for student records queue --- records of students (structure type) 
+                                           is the domain.
+
+F : Functions 
+Basic functions :
+1. create() / init() : we need to initialize the queue.
+2. enqueue() : insert an element into the queue at rear end.
+3. dequeue() : remove or delete an element from the queue from front end.
+4. peek() / display_front() : displaying the element which will be deleted in next dequeue() operation
+            In other word, displaying front element
+5. isempty() : checking whether queue is empty or not, returns true if queue
+               is empty otherwise false.
+
+Additional operation (applied for static queue only) :
+
+6. isfull() : required only for static implementation of queue (using array).
+              Checking whether static queue is full or not, return true if queue
+              is full otherwise false.
+
+
+A : Axioms / Rules
+1. Only one element can be inserted or deleted at a time.
+2. Insertion are done at rear end and deletion are done from front end.
+3. It should work in FIFO manner. 
+
+Queue underflow condition : Trying to dequeue the element from a empty queue.
+Queue overflow condition : Trying to enqueue the element in the full queue.
+
+
+--------------------------------------------------------------------------------------------------
+
+Implementation of queue : 
+1. Using array : static implementation
+2. using linked list (preferably singly linked list) : dynamic implementation
+
+-------------------------------------------------------------------------------------------
+
+Types of queue : Every type of queue can be static or dynamic.
+
+1. Linear queue : in this type the queue grows in forward direction only, means
+                  we cannot utilize the vacant spaces available at the beginning,
+                  made due to deletions. In other words, front and rear are not
+                  reset.
+                  It works in FIFO mmanner only.
+
+2. Circular queue : in this type we utilize the vacant spaces available at the beginning
+                  made due to deletions. In other words, we reset front and rear
+                  to some starting point.
+                  It works in FIFO mmanner only. 
+
+Linear queue cannot be circular and circular cannot be linear.
+
+3. Priority queue : Insertions are in a linear way.  While deleting the elements we 
+                    delete them according to the priority of the element means the 
+                    element with higher priority will be deleted first.
+                    Here queue does not work in FIFO manner means insertions are
+                    at rear end and deletions are from front end, but the
+                    element with highest priority present in queue will be
+                    deleted first.
+                    After insertion, we rearrange the queue so that the higher
+                    priority elements come at front end.
+                    The elements of same priority will be deleted in FIFO manner.
+
+Priority queue can be linear or circular.
+
+4. Double ended queue : insertions and deletions can be made from both ends i.e.
+                        we can insert or delete element from front end as well as
+                        from rear end.
+   Here, the enqueue() and dequeue() operations are modified as -
+ 1) enqueue_at_front() 
+ 2) enqueue_at_rear() ---- same as enqueue() operation in FIFO queue
+ 3) dequeue_at_front() --- same as dequeue() operation in FIFO queue
+ 4. dequeue_at_rear()
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

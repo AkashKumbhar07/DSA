@@ -1,0 +1,38 @@
+
+
+
+
+4. Double ended queue - deque (deck) :
+--- We can enqueue or dequeue the elements from both ends.
+---Means - enqueue can be done at front as well as rear end.
+         - dequeue can be done from front as well as rear end.
+--- So here, two types of enqueue() and dequeue() operations -
+    a) enqueue_at_rear() : same as normal enqueue().
+    b) enqueue_at_front() : new operation.
+    c) dequeue_from_front() : same as normal dequeue().
+    d) dequeue_from_rear() : new operation.
+
+
+
+
+
+
+
+
+
+
+
+
+MCQ :
+In case deque (double ended queue), which are the new operations to be added
+with the operations performed in other types of queues?
+Ans :  enqueue_at_front() and dequeue_from_rear()
+
+There are two types of double ended queues :
+1. Entry (insert) restricted double ended queue :
+   --- dequeue operation can be done at both ends
+   --- but enqueue will be done only at one end (mostly at rear end).
+
+2. Exit (delete) restricted double ended queue :
+   --- enqueue operation can be done at both ends
+   --- but dequeue will be done only fron one end (and mostly at front end).

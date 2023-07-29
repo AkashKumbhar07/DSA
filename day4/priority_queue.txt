@@ -1,0 +1,60 @@
+Revision :
+
+Queue ?
+--- linear data structure
+--- dynamic in nature
+--- having two ends open -- front and rear.
+--- All insertions are made at rear end and all deletions are made at front 
+    end.
+--- works in FIFO manner.
+--- visualized horizontally.
+
+Types of queues :
+1. linear : front and rear are increased in forward direction, they cannot be
+            reset.  So in static linear queue, the vacant spaces formed due
+            to dequeue operation cannot be utilized.
+a) static linear queue
+   queue empty condition : front == rear
+   queue full condition : rear == array_size - 1
+b) dynamic linear queue
+   queue empty condition : rear == NULL or front == NULL
+   enqueue operation is equivalent to insert at end operation (append) operation
+   of linked list.
+   dequeue opearation is equivant to delete from first operation of linked list.
+
+2. circular ---- can also be static or dynamic
+   --- to remove drawback of static linear queue --- we cannot utilized the 
+       vacant spaces formed due to dequeue operations.
+   --- increment formulae for front and rear in static circular queue
+          front=(front+1)%array_size;
+          rear =(rear+!)%array_size;
+   --- queue empty condition for static circular queue --- front == rear
+   --- queue full condition for static circular queue --- (rear+1)%array_size == front
+   --- In case of dynamic implementation, we use circular linked list to
+       implement circular queue and we maintain the address of tail element
+       as rear node.  rear->next will be a front node.
+
+3. priority
+4. double ended 
+
+-----------------------------------------------------------------------------------------------------
+
+2. Priority queue : 
+
+--- it can be linear or circular. 
+--- it can be static or dynamic. 
+--- insertions and deletions are done in normal way means insertions are made
+    at rear end and deletions are made from front end.  But the element with
+    higher priority will be deleted first --- means it does not work in FIFO 
+    manner --- if elements having same priority then FIFO is applied.
+--- We need to modify either enqueue() or dequeue() operation, in which we
+    rearrange the queue elements according to their priority.
+--- The best approach is when a new element is enqueued in the queue then
+    place it (i.e. insert it) at its right position according to its priority.
+
+   
+
+
+
+
+                     

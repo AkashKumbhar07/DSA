@@ -1,0 +1,17 @@
+Applications of linked list :
+
+1. To implement another types of data structures for storing the data.
+   -- dynamic stack
+   -- dynamic queue
+   -- tree structured data -- organization structure
+   -- graph data --- google map
+2. To store the polynomials 
+   polynomical contains terms added together and each term is made of two 
+   parts - coefficient and variable(s).  There can be one or more than one 
+   variables in the term and each variable has a power value.
+   Polynomials are writtern in the descending order of power's of variables
+   For e.g.^
+   one variable polynomial ---  3x^5 - 5x^3 + 10x^2 - 55x + 4
+   two variable polynomial ---  45x^5y^3  + 12x^3y^6 - 45y
+
+3. To store the linked data 

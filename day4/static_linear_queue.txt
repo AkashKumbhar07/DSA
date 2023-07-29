@@ -1,0 +1,96 @@
+Implementations :
+
+1. Static linear queue : linear queue using array ---- front and rear are increased only 
+                         front and rear are not reset to initial values.
+
+To maintain static linear queue, we need 3 things -
+a) the array to store the queue elements 
+b) the front variable --- it is index --- referring to the front location of a queue
+c) the rear variable --- it is index --- referring to the rear location of a queue
+
+
+For e.g. to maintain a static linear queue of integers
+
+class Queue
+{
+  int arr[50];
+  int front,rear;
+}
+
+Queue q; // q is queue variable
+
+
+
+To maintain the queue for printer
+
+class static_queue
+{
+  char filenames[50][100];  // we can store 50 filenames, each filename can be
+                            // of 100 characters
+  int front,rear;
+}
+
+static_queue printer1;  // printer1 queue variable
+
+
+
+To maintain the queue for percentage values
+
+class QueueFloat
+{   
+   float percentage[50];
+   int front,rear;
+}
+
+QueueFloat q ;// percentage queue variable for cat exam 2022
+
+----------------------------------------------------------------------------------------------------
+
+
+Note : front and rear initialized to -1.
+
+1. rear will contain the index number where latest insertion is made.
+2. front will contain the index number from where the latest deletion is made.
+3. If front contain 'm' and rear contains 'n' (m<=n), then number of elements
+   in a queue is n-m.
+4. In static queue, the elements are not deleted not physically from the queue,
+   as we are using array.  We are deleting them logically by maintaining the
+   front index.
+5. If front == array_size-1, means we have enqueued and dequeued no.of elements = array_size.
+   Now at this time, the queue is full as well as empty because 
+   front == rear (queue empty means front == array_size-1)
+   rear == array_size-1 (queue full). 
+6. All operations of static linear queue are executed in constant time i.e. 
+   time complexity is O(1).
+   
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

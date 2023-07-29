@@ -1,0 +1,16 @@
+Drawback of static stack :
+As we have used array, the stack becomes of fixed size, it cannot grow or
+shrink during execution time (runtime).
+
+To avoid this dynamic stack is used (linked list).
+
+
+----------------------------------------------------------------------------------------
+
+Dynamic stack :
+--- stack is implemented using linked list (generally using singly linked list).
+--- In dynamic stack there is not stack full condition (upper limit is ram capacity).
+--- In this the elements are physically deleted from the memory.
+
+
+Node definition : (same as Node of SLL)

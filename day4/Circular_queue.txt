@@ -1,0 +1,208 @@
+3. Circular Queue :
+
+Drawback of linear queue :
+In static implementation of linear queue (using array), as front and rear is 
+increased in forward direction only and we cannot reset them to the beginning,
+due to which the vacant space formed due to dequeue operation at the beginning 
+cannot be utilized means we cannot store new values at those vacant spaces. 
+
+To remove this drawback of linear queue, circular queue is introduced.
+--- in circular queue the front and rear are reset i.e. they can be set
+    to initial values again.
+
+------------------------------------------------------------------------------------
+Implementation of circular queue using array (static circular queue) :
+
+There are two ways to reset front and rear  :
+1. Give conditions 
+   if(front+1 == array_size) 
+      front =0;
+   if(rear+1 == array_size)
+      rear=0;
+
+2. Use mod function (remainder property) : if we divide any number by 'n',
+   then possible remainders are 0 to n-1.
+   So to increase front and rear, we use formula,
+   front = (front+1) % array_size;
+   rear = (rear+1) % array_size;
+
+   Suppose array_size = 5 and front 4.
+   so (front+1) % array_size ==> (4+1)%5 ==> 5%5 = 0
+   Thus front becomes 0.
+   Same for rear.
+
+Functions :
+
+1. init() : 
+ 
+  front =  rear = array_size-1;
+
+
+2. isempty() :
+
+   if(front == rear)
+      return 1;
+   else
+      return 0;
+
+
+3. isfull() :
+   
+  if((rear+1)%array_size == front)
+     return 1;
+  else
+    return 0;
+
+We keep one space vacant to indicate queue full condition in circular queue,
+which is pointed by front index (i.e. latest deletion is always the vacant 
+space except initially).
+
+
+4. enqueue() :
+
+ if(isfull())
+   printf("\nQueue is full...");
+ else
+ {
+    rear=(rear+1)%array_size;
+    data[rear]=value;
+ }
+
+
+5. dequeue() :
+  
+  if(isempty())
+    printf("\nQueue empty...");
+  else
+  {
+     front=(front+1)%array_size;
+     return(data[front]);
+  }   
+
+
+6.peek() : 
+
+ if(isempty())
+    printf("\nQueue empty...");
+  else
+  {
+     return(data[(front+1)%array_size]);
+  }   
+
+
+Note :
+In circular queue ---  front == rear, front < rear, front > rear .
+
+
+---------------------------------------------------------------------------------
+ 
+                           Static linear queue        static Circular queue
+
+1. Initial values of           f = r = -1               f = r = MAX -1 
+   front and rear                                      
+
+2. increment formula for       f++                      f = (f+1)%MAX;
+   front and rear              r++                      r = (r+1)%MAX;
+
+3. Queue empty condition       f == r                    f == r
+
+4. Queue full condition        rear == MAX -1           (r+1)%MAX == front
+
+                             all array spaces are          Without counter, we use one less
+                             used to store values.         space than arraysize is used to
+                                                            store values.
+        
+------------------------------------------------------------------------------------------
+
+Dynamic Circular queue : using circular SLL
+
+typedef struct queuenode
+{
+   int data;
+   struct queuenode *next;
+}CQNODE;
+
+in main() or globally, we declare one pointer pointing the tail node of the
+CSLL, called rear.
+  CQNODE *rear;
+
+Only one pointer is maintained because as it circular singly linked list, last
+node's next contains the address of first node, i.e. front node.
+
+
+Functions :
+1. init() :
+
+void init()
+{
+   rear = NULL;
+}
+
+
+
+2. enqueue() : it is similar to inserting at the end operation circular SLL.
+
+ 
+ nn=createnode(value); 
+ if(rear == NULL) // queue is empty ---so newnode is front as well as rear.
+ {
+    rear = nn;
+    nn->next=nn;
+ }
+ else
+ {
+     nn->next = rear->next;
+     rear->next =nn;
+     rear = nn;
+ }
+
+
+3. isempty() :
+
+  if(rear == NULL)
+     return 1;
+  else
+     return 0;
+
+
+4. dequeue() : it is similar to deleting first node from circular SLL.
+
+  if(isempty()) // queue is empty
+  {
+    printf("queue empty...");
+    return -1;
+  }
+  else {
+  t=rear->next;  // t points to front node
+  value = t->data;
+  if(rear->next == rear)
+     rear = NULL;
+  else
+     rear->next =t->next;
+  free(t);
+  return value;
+ }
+
+
+5. peek() : same as dequeue() but we are not going to rearrange the pointers.
+
+ if(isempty()) // queue is empty
+  {
+    printf("queue empty...");
+    return -1;
+  }
+  else {
+    return(rear->next->data);
+ }
+
+
+
+
+
+
+
+
+
+
+
+

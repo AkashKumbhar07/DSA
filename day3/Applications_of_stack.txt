@@ -1,0 +1,149 @@
+Revision :
+
+Stack?
+--- linear data structure in which insertions (push) and deletions (pop) are
+    done from only one end called top end.
+--- dynamic in nature --- grow or shrink during runtime.
+--- works in LIFO manner.
+--- Time complexity of every operation is O(1).
+--- Types of stack --- static (implemented using array and dynamic (implemented
+    using linked list).
+--- In case of static stack 
+     isempty condition ---   top == -1
+     isfull condition  ---   top == MAX - 1 
+     no. of elements present in a stack = top+1
+     no. of vacant spaces in a stack = MAX-1-top
+     The elements are deleted logically, not physically.
+--- In case of dynamic stack
+    push operation is equivalent to insert at first operation of LL.
+    pop operation is equivalent to delete first node operation of LL. 
+    top is a pointer pointing to first element of LL which is topmost element.
+    isempty condition --- top==NULL
+     The elements are deleted physically.
+     
+-----------------------------------------------------------------------------------
+
+Applications of stack :
+
+1. Recursion  - while executing the recursive functions call, an inbuilt stack
+   is used by the system.
+    
+   long factorial(int n)
+   {
+      if(n==1)
+        return 1;
+      return(n*factorial(n-1)); // recursive call
+   }
+
+
+2. Reversing a string :
+   For e.g.
+   input string = "Hello"
+   output string = "olleH";
+   Logic : read input string one character at a time from first to last (till '\0' is not
+   present), push each character into the stack.  Then pop the character from
+   the stack and append it to the output string till stack is not empty.
+
+
+3. To check whether string or number is palindrome or not
+   if string and it's reversed string is same then it is palindrome.
+   For e.g. "madam" is palindrome
+   "eye" , "nayan", abcdcba", "level", nitin, etc.
+
+4. Used for backtracking in algorithms (recursive algorithms).
+   For e.g DFS (depth first traversal) of graph.
+           Inorder, preorder, postorder traversals of tree.
+
+
+5. To check whether expression is Parenthsis balance
+()[]{((])}
+
+--- Expression made up of operators and operands .
+    For e.g. a+b*c/d -- expression
+    ((a+b)*c)/d --- parenthesis balanced expression
+
+--- push the opening brackets into the stack from left to right, and when
+    closing bracket comes, check the top bracket in the stack --- if it is
+    matched with current closing bracket (for e.g. current closing bracket
+    is round and top opening bracket is also round, then matched), then
+    pop it, otherwise give an error "not balanced". 
+    After doing all push or pop operations if stack is not empty --- more opening
+    than closing --- show error msg.
+    or there are some closing brackets in the input expression and stack is empty
+    --- more closing than opening --- show error msg.  
+
+6. For expression conversions 
+a) Infix : operator comes in between operands (may contain brackets)
+           operators are not in the order according to their execution.
+           in infix form, expression may be parenthised.
+   For e.g.
+    1. a+b*c --- first multiplication then addition
+    2.  (a+b)*c  --- first addition then multiplication
+b) Prefix (Polish notation) : operator comes before operands (no brackets)
+    1. +a*bc
+    2. *+abc
+c) Postfix (reverse polish notation) : operator comes after operands (no brackets)
+    1. abc*+
+    2. ab+c*
+
+
+   infix to postfix and vice versa
+   infix to prefix and vice versa
+   prefix to postfix and vice versa
+
+7. For expression evaluation
+
+-------------------------------------------------------------------------------------------------------
+
+Expression : made up of operators, operands and brackets.
+
+  result =  a+b/d-e*f  --- RHS is expression
+
+   
+
+In this expression, order of execution of operations is -
+  b/d     e*f    a+result of(b/d)    result of(a+result of(b/d)) - result of(e*f)
+ 
+
+    (a+b)/(d-e)*f   --- brackets are used to change the priority of operators
+
+There are 3 forms of expressions : infix, prefix and postfix
+a) infix : operator comes in between operands ----   a+b
+           infix expression can contains brackets
+            a+b-c
+            By default + is executed before -, but to change the order we put brackets.
+            a+(b-c)
+            In this case, first we need to check whether the expression is
+            parenthesis balanced.
+            for e.g. ((a-b)*d)+(e-f)  -- not balanced
+ 
+b) prefix : operator comes before operands ----   +ab
+            No brackets are used, operator sequence is according to the priority in
+            the prefix experession.
+            For e.g.
+            infix : a+(b-c)
+            prefix : +-bca
+
+            Prefix notation is also called as Polish notation (Polish is name of
+            scientist who invented this notation).
+       
+
+c) postfix : operator comes after operands ---   ab+
+            No brackets are used, operator sequence is according to the priority in
+            the prefix experession.
+	    For e.g.
+            infix : a+(b-c)
+            prefix : abc-+
+
+            Postfix notation is also called as reverse Polish notation
+
+
+
+                   
+
+
+
+
+
+
+   

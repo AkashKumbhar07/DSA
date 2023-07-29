@@ -1,0 +1,88 @@
+
+Stack :
+
+--- It is a linear data structure --- elements are arranged in order, one-to-one
+    relationship between elements.
+--- It is dynamic in nature means it can grow or shrink during execution time
+    (but not the static stack).
+--- At a time we can insert one element to the stack and remove one element
+    from the stack.
+--- Only one end of the stack is kept opened means we can do insertion or 
+    deletions from that one end only (like a bottle), this end is called top
+    end.
+--- The element which is inserted last will be removed first, so stack works
+    in LIFO manner (Last In First out) --- Sometimes called as FILO (First in
+    Last Out).
+--- Stack is visualized vertically.
+
+
+As stack is a data structure, we define it by using a triplet - D,F,A
+
+Suppose we are maintaining the stack of chairs.
+
+D : Data objects : chair
+F : Functions :
+Basic functions :
+a) init() -- initialization of a stack
+b) push() --- inserting a new chair at the top of the stack
+c) pop() --- removing one chair from the top of the stack
+d) isempty() --- check whether the stack is empty or not --- returns true
+                 if no chair in the stack otherwise false.
+e) peek() --- viewing the topmost chair --- topmost element --- not removing
+              it
+
+Additional function for static stack :
+f) isfull() --- checking whether the stack is full or not -- returns true
+                if stack is full (chair stack touches to the roof of hall) 
+                otherwise returns false --- applicable only to static stack.
+
+A : Axioms (rules)  
+a) Insertions and deletions must be done from one end (i.e. top).
+b) At a time only one element must be pushed or popped.
+c) The element i.e. chair which is pushed last must be popped first (LIFO).
+
+--------------------------------------------------------------------------------------------
+
+Implementation of Stack :
+
+There are two ways to implement the stack : using array and using linked list.
+
+a) Stack implementation using array (Static stack) : static implementation
+
+With array, we need to maintain two things for the stack :
+1. An array of same type as that of the elements that we want to push into the
+   stack.
+2. The position of the top element : As we are using array, the top is an integer
+   variable which contains the index position of the topmost element.
+   top is a variable which contains the index of topmost element.
+
+To combine these two things under one data structure, stack we use strcture.
+
+// Static stack definition
+
+
+For e.g. to maintain integer stack,
+
+class stack
+{
+   int data[100];
+   int top;
+};
+
+In main() or any function -- we declare a variable of this class
+  stack st;
+
+
+
+To maintain float stack,
+
+
+class stack
+{
+   float data[100];
+   int top;
+}
+
+In main() or any function -- we declare a variable of this class
+  stack st;
+
